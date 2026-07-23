@@ -15,7 +15,7 @@ class SystemEngineManager:
         try:
             service_code = input("Enter service code")
             while service_code:
-                if service_code not in self.services_list["service_code"]:
+                if service_code not in (element["service_code"] for element in self.services_list):
                     print("Invalid ussd")
                     service_code
                 else:
@@ -24,4 +24,4 @@ class SystemEngineManager:
                             print(service)
                 break
         except Exception as systemError:
-            print(f"An error occured {systemError}")
+            print(f"An error occured {systemError}") 
