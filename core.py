@@ -1,15 +1,14 @@
-
+from database import get_all_services
 
 class SystemEngineManager:
 
     def __init__(self):
-        self.services_list = [
-            {"service_name":"Mobile service", "service_code":"*149*01#"}
-        ]
+        self.services_list = get_all_services()
         self.services_code = ["*149*01#"]
         self.vouchers_list = []
         self.system_money_balance = 0
         self.company_customers = []
+
 
     def start_system(self):
         try:
